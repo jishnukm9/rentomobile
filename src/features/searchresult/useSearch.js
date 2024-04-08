@@ -20,10 +20,12 @@ export function useSearch(pickUpDate, dropOffDate,pickUpTime,dropOffTime ,pickUp
       return getCars(pickUpDate, dropOffDate, pickUpTime, dropOffTime, pickUpLocation, dropOffLocation, brand, countryCode);
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["cabins"] });
+      queryClient.invalidateQueries({ queryKey: ["cars"] });
     },
     onError: (err) => toast.error(err.message),
   });
+
+  
 
   return { isLoading, error, cars };
 }

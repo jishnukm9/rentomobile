@@ -17,7 +17,7 @@ export default function CarDeatils({data,days,pickUp,locDetails,terms,showLocFun
     
    className='my-2 border rounded-md'>
 
-     <div className='grid grid-cols-[1fr,2fr,1fr] p-3 '>
+     <div className='grid lg:grid-cols-[1fr,2fr,1fr] p-3 '>
        <div  className='flex justify-center items-center p-3'>
 
       <div>

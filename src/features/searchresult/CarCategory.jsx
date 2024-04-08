@@ -8,13 +8,13 @@ export default function CarCategory() {
     <div>
         
 
-        <ul className='flex items-center '>
-            <CarCategoryItem text="Medium car" />
+        <ul className='flex items-center text-xs lg:text-1xl'>
+            <CarCategoryItem text="Medium Car" />
             <CarCategoryItem text="Small Car" />
             <CarCategoryItem text="Large Car" />
             <CarCategoryItem text="SUV'S" />
             <CarCategoryItem text="People carrier" />
-            <CarCategoryItem text="Premium car" />
+            <CarCategoryItem text="Premium Car" />
             <CarCategoryItem text="Estate" />
           
         </ul>

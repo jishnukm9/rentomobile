@@ -15,6 +15,9 @@ import LocationMap from './LocationMap'
 export default function CarSearchResults({resultData}) {
 
 
+
+
+
   
   const [showLocationModal,setShowLocationmodal] = useState(false)
   const [showTermsModal,setShowTermsmodal] = useState(false)
@@ -48,7 +51,7 @@ export default function CarSearchResults({resultData}) {
     const carCount = result?.length
 
     // console.log("loc details-",locDetails)
-    // console.log("terms-",terms)
+    // console.log("result-",result)
   return (
     <div className='my-5 '>
 
@@ -61,11 +64,11 @@ export default function CarSearchResults({resultData}) {
 <ModifySearch />
  <LocationAndFilter count={carCount} />
 
- <div  className='max-w-[1125px] grid grid-cols-[3fr,7fr] gap-10 my-5 mx-auto'>
+ <div  className='max-w-[1125px] grid lg:grid-cols-[3fr,7fr] gap-10 my-5 mx-auto'>
   
     <SearchFilter />
 
-    <div>
+    <div className='p-0 lg:p-0'>
 
    { result?.map((element,index) => 
    

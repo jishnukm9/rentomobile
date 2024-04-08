@@ -25,7 +25,7 @@ export default function LocationAndFilter({count}) {
 
   return (
     <>
-    <div  className='max-w-[1125px] grid grid-cols-[3fr,7fr] gap-10 my-5 mx-auto'>
+    <div  className='max-w-[1125px] grid lg:grid-cols-[3fr,7fr] gap-10 my-5 mx-auto'>
     <div className='flex justify-center items-center h-[170px]  bg-[linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0),rgba(255,255,255,0)),url(https://cdn2.rcstatic.com/images/map/background.png)] bg-cover'>
 <div className='flex flex-col justify-center items-center' onClick={()=> {
       console.log("clicked")
@@ -35,12 +35,12 @@ export default function LocationAndFilter({count}) {
     <ButtonSmall  text="Show on map" />
     </div>
     </div>
-    <div className='flex flex-col justify-between'>
+    <div className='flex flex-col justify-between p-5 lg:p-0 gap-5'>
       <div>
     <p className='text-2xl font-bold mb-2 text-globaltext'>{count} cars available</p>
-    <DropDown  className="mb-5" />
+    <DropDown  className="mb-0" />
     </div>
-  <CarCategory />
+  <CarCategory  />
 
     </div>
   </div>

@@ -5,6 +5,9 @@ export function carSearchResultsFormatFunc(data){
 
 
 
+    
+    console.log('result',data)
+
    
       const dataFinal = data?.vehicles?.map((item) => ({
         name: `${item.category.make} ${item.category.model}` ,

@@ -7,6 +7,9 @@ import Footer from '../ui/Footer';
 import SearchLoading from '../features/searchresult/SearchLoading';
 import CarSearchResults from '../features/searchresult/CarSearchResults';
 import ModalWindow from '../ui/ModalWindow';
+import { getLocations } from '../data/search/locations';
+import { dummySearchResultData } from '../data/searchresult/dummyDataSearchResult';
+import { FilterContext } from '../context/filterContext';
 
 export default function SearchResults() {
 
@@ -15,7 +18,7 @@ export default function SearchResults() {
 const {selectedPickUp,
   selectedDrop,
   startDate,startTime,
-  endDate,endTime} = useContext(SearchContext)
+  endDate,endTime,categoryFilter} = useContext(SearchContext)
 
 
 
@@ -26,20 +29,30 @@ const pickUpTime = `${startTime}:00`;
 const dropOffTime = `${endTime}:00`;
 const pickUpLocation = selectedPickUp;
 const dropOffLocation = selectedDrop;
-// const pickUpLocation = 'BOM';
-// const dropOffLocation = 'MAA';
 const countryCode = "IN";
 
 console.log("search query-",pickUpDate, dropOffDate,pickUpTime,dropOffTime ,pickUpLocation,dropOffLocation,brand,countryCode)
 const { isLoading, error, cars } = useSearch(pickUpDate, dropOffDate,pickUpTime,dropOffTime ,pickUpLocation,dropOffLocation,brand,countryCode);
 
- 
+let resultData = cars
 
-const resultData = cars
+if(!cars){
+  const {cars:data} = dummySearchResultData(selectedPickUp,selectedDrop,startDate,endDate)
+  resultData=data
+}
+
+if(categoryFilter){
+  resultData = resultData.filter((item)=> (item.type === categoryFilter))
+}
+
+
+// const {searchResults,setSearchResult} = useContext(FilterContext)
+
+// setSearchResult(resultData)
 
 console.log("resilt --",resultData)
 
-
+let searchResultData = resultData;
   return (
     <div>
 <div className='bg-blue-600'>
@@ -49,7 +62,7 @@ console.log("resilt --",resultData)
 
 
 <ModalWindow />
-{isLoading ? <SearchLoading /> :  <CarSearchResults resultData={resultData} /> }
+{isLoading ? <SearchLoading /> :  <CarSearchResults resultData={searchResultData} /> }
 
 
 

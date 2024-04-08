@@ -11,6 +11,7 @@ import Booking from './pages/Booking';
 import PageNotFound from './pages/PageNotFound';
 import toast, { Toaster } from "react-hot-toast";
 import SearchProvider from './context/SearchContext';
+import FilterProvider from './context/filterContext';
 
 
 
@@ -42,6 +43,7 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <SearchProvider>
+        <FilterProvider>
       <BrowserRouter >
     <Routes>
     
@@ -54,6 +56,7 @@ export default function App() {
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
+    </FilterProvider>
     </SearchProvider>
     <Toaster
         position="top-center"
