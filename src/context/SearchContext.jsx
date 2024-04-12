@@ -29,7 +29,7 @@ export default function SearchProvider({children}){
 
   const [pickUpLocationFull,setPickUpLocationFull] = useState('')
   const [dropOffLocationFull,setDropOffLocationFull] = useState('')
-  const [categoryFilter,setCategoryFilter] = useState(null)
+  
 
   function changeStartTime(val){
     setStartTime(val)
@@ -85,8 +85,7 @@ export default function SearchProvider({children}){
         // setDropOffLocationFull,
         pickUpLocationFull,
         dropOffLocationFull,
-        categoryFilter,
-        setCategoryFilter
+    
       }}>
         {children}
         </SearchContext.Provider>

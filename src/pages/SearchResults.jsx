@@ -18,7 +18,7 @@ export default function SearchResults() {
 const {selectedPickUp,
   selectedDrop,
   startDate,startTime,
-  endDate,endTime,categoryFilter} = useContext(SearchContext)
+  endDate,endTime,} = useContext(SearchContext)
 
 
 
@@ -31,26 +31,22 @@ const pickUpLocation = selectedPickUp;
 const dropOffLocation = selectedDrop;
 const countryCode = "IN";
 
-console.log("search query-",pickUpDate, dropOffDate,pickUpTime,dropOffTime ,pickUpLocation,dropOffLocation,brand,countryCode)
+// console.log("search query-",pickUpDate, dropOffDate,pickUpTime,dropOffTime ,pickUpLocation,dropOffLocation,brand,countryCode)
 const { isLoading, error, cars } = useSearch(pickUpDate, dropOffDate,pickUpTime,dropOffTime ,pickUpLocation,dropOffLocation,brand,countryCode);
 
 let resultData = cars
 
-if(!cars){
+
+if(!cars || Object.keys(cars).length === 0){
   const {cars:data} = dummySearchResultData(selectedPickUp,selectedDrop,startDate,endDate)
   resultData=data
 }
 
-if(categoryFilter){
-  resultData = resultData.filter((item)=> (item.type === categoryFilter))
-}
+
+// const {setCategoryFilter} = useContext(FilterContext)
+// setCategoryFilter(null)
 
 
-// const {searchResults,setSearchResult} = useContext(FilterContext)
-
-// setSearchResult(resultData)
-
-console.log("resilt --",resultData)
 
 let searchResultData = resultData;
   return (

@@ -9,8 +9,8 @@ import { getLocations } from "../search/locations";
 export function dummySearchResultData(pickUp,dropOff,startDate,endDate){
 
 
-    const categoryList = ["Medium Car",'Small car','Large Car',"SUV'S",'People carrier','Estate']
-   
+    
+  const categoryList = ["Medium Car",'Small car','Large Car',"SUV'S",'People carrier','Estate']
 
 
 
@@ -46,7 +46,8 @@ capacity:{
     currency:"INR"
   }
 },
-type: categoryList[Math.floor(Math.random() * categoryList.length)]
+type: categoryList[Math.floor(Math.random() * categoryList.length)],
+rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
 },
 {category:{
     make:"Hyundai",
@@ -70,7 +71,8 @@ capacity:{
     currency:"INR"
   }
 }
-,type: categoryList[Math.floor(Math.random() * categoryList.length)]
+,type: categoryList[Math.floor(Math.random() * categoryList.length)],
+rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
 },
 {category:{
     make:"Hyundai",
@@ -94,7 +96,8 @@ capacity:{
     currency:"INR"
   }
 },
-type: categoryList[Math.floor(Math.random() * categoryList.length)]
+type: categoryList[Math.floor(Math.random() * categoryList.length)],
+rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
 },
 {category:{
     make:"Toyota",
@@ -118,7 +121,8 @@ capacity:{
     currency:"INR"
   }
 },
-type: categoryList[Math.floor(Math.random() * categoryList.length)]
+type: categoryList[Math.floor(Math.random() * categoryList.length)],
+rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
 },
 {category:{
     make:"Ford",
@@ -142,7 +146,8 @@ capacity:{
     currency:"INR"
   }
 },
-type: categoryList[Math.floor(Math.random() * categoryList.length)]
+type: categoryList[Math.floor(Math.random() * categoryList.length)],
+rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
 },
 {category:{
     make:"Nissan",
@@ -166,7 +171,8 @@ capacity:{
     currency:"INR"
   }
 },
-type: categoryList[Math.floor(Math.random() * categoryList.length)]
+type: categoryList[Math.floor(Math.random() * categoryList.length)],
+rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
 },
 {category:{
     make:"Valkswagen",
@@ -190,7 +196,8 @@ capacity:{
     currency:"INR"
   }
 },
-type: categoryList[Math.floor(Math.random() * categoryList.length)]
+type: categoryList[Math.floor(Math.random() * categoryList.length)],
+rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
 },
 {category:{
     make:"Ford",
@@ -214,7 +221,8 @@ capacity:{
     currency:"INR"
   }
 },
-type: categoryList[Math.floor(Math.random() * categoryList.length)]
+type: categoryList[Math.floor(Math.random() * categoryList.length)],
+rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
 }],
 reservation:{
 pickup_location:{

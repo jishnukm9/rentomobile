@@ -5,8 +5,8 @@ export function carSearchResultsFormatFunc(data){
 
 
 
-    
-    console.log('result',data)
+  
+    // console.log('result',data)
 
    
       const dataFinal = data?.vehicles?.map((item) => ({
@@ -17,8 +17,10 @@ export function carSearchResultsFormatFunc(data){
         largeLuggage : item.capacity.luggage_capacity.large_suitcase,
         smallLuggage : item.capacity.luggage_capacity.small_suitcase,
         transmission : item.category?.vehicle_transmission,
-        price : `${item.rate_totals.pay_later.reservation_total} ${item.rate_totals.rate.currency}`,
-        rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
+        price : item.rate_totals.pay_later.reservation_total,
+        currency: item.rate_totals.rate.currency,
+        rating: item.rating,
+        type:item.type
       }));
 
       const pickUp = data?.reservation?.pickup_location?.location?.name;

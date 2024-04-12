@@ -9,14 +9,19 @@ export const FilterContext = createContext()
 export default function FilterProvider({children}) {
 
 
-    const [searchResult,setSearchResult] = useState({})
+    
+    const [categoryFilter,setCategoryFilter] = useState(null)
+    const [priceFilter,setPriceFilter] = useState([])
 
 
 
 
   return (
   
-    <FilterContext.Provider value={{searchResult,setSearchResult}} >
+    <FilterContext.Provider value={{categoryFilter,
+    setCategoryFilter,
+    priceFilter,
+    setPriceFilter}} >
       {children}
     </FilterContext.Provider>
   )

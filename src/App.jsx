@@ -32,7 +32,9 @@ export default function App() {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
-        staleTime: 0,
+        staleTime: 5 * 60 * 1000,
+        refetchOnWindowFocus: false,
+        cacheTime: 10 * 60 * 1000 
       },
     },
   })
@@ -43,20 +45,24 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <SearchProvider>
-        <FilterProvider>
+        
       <BrowserRouter >
     <Routes>
     
         <Route index element={<Navigate replace to="search" />} />
         <Route path="search" element={<Search/>} />
-        <Route path="bookingsearchresult" element={<SearchResults />} />
+        <Route path="bookingsearchresult" element={
+        <FilterProvider>
+        <SearchResults />
+        </FilterProvider>
+        } />
         
         <Route path="booking" element={<Booking />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
-    </FilterProvider>
+    
     </SearchProvider>
     <Toaster
         position="top-center"

@@ -11,6 +11,7 @@ import LocationDetails from './LocationDetails'
 import Terms from './Terms'
 import { getLocations } from '../../data/search/locations'
 import LocationMap from './LocationMap'
+import { FilterContext } from '../../context/filterContext'
 
 export default function CarSearchResults({resultData}) {
 
@@ -29,6 +30,13 @@ export default function CarSearchResults({resultData}) {
     const {
         startDate,
         endDate,selectedPickUp} = useContext(SearchContext)
+
+
+
+        const {
+          categoryFilter,priceFilter} = useContext(FilterContext)
+
+        
   
     
       
@@ -44,14 +52,49 @@ export default function CarSearchResults({resultData}) {
           
        
          
-
+          console.log(categoryFilter,priceFilter)
 
     const {data:result,pickUp,locDetails,terms} = carSearchResultsFormatFunc(resultData)
+    let resultFinal;
+    if (categoryFilter && priceFilter.length > 0) {
 
-    const carCount = result?.length
+      const newPriceFilter = priceFilter.map((item)=> {return item.split('-').map(Number)})
+
+      const filnalFilter = newPriceFilter.flat().sort((a, b) => a - b)
+
+      console.log("Filtering by category and price range:", categoryFilter, priceFilter);
+      resultFinal = result.filter(item => {
+          const price = parseFloat(item.price);
+          const minPrice = filnalFilter[0];
+          const maxPrice = filnalFilter.at(-1)  || Infinity
+          return item.type === categoryFilter && price >= minPrice && price <= maxPrice;
+      });
+  } else if (categoryFilter) {
+      console.log("Filtering by category only");
+      resultFinal = result.filter(item => item.type === categoryFilter);
+  } else if (priceFilter.length > 0) {
+      console.log("Filtering by price only");
+      const newPriceFilter = priceFilter.map((item)=> {return item.split('-').map(Number)})
+
+      const filnalFilter = newPriceFilter.flat().sort((a, b) => a - b)
+
+      console.log(filnalFilter)
+      resultFinal = result.filter(item => {
+          const price = parseFloat(item.price);
+          const minPrice = filnalFilter[0];
+          const maxPrice =filnalFilter.at(-1) || Infinity
+          console.log("min",minPrice,"max",maxPrice)
+          return price >= minPrice && price <= maxPrice;
+      });
+  } else {
+      resultFinal = result;
+  }
+
+
+    const carCount = resultFinal?.length
 
     // console.log("loc details-",locDetails)
-    // console.log("result-",result)
+    console.log("result- final",resultFinal)
   return (
     <div className='my-5 '>
 
@@ -70,7 +113,7 @@ export default function CarSearchResults({resultData}) {
 
     <div className='p-0 lg:p-0'>
 
-   { result?.map((element,index) => 
+   { resultFinal?.map((element,index) => 
    
   
    <CarDeatils showPickMapFunc={setShowPickUpMap} key={index} data={element} days={calculateDaysBetweenDates( endDate,startDate)} pickUp={pickUp} locDetails={locDetails} terms={terms} showLocFunc={setShowLocationmodal} showTermsFunc={setShowTermsmodal}   />
