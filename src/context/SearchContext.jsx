@@ -5,7 +5,7 @@
 
 
 
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { getLocations } from '../data/search/locations'
 
 
@@ -16,19 +16,101 @@ export default function SearchProvider({children}){
 
     
 
-  const [startDate, setStartDate] = useState(new Date(new Date().setDate(new Date().getDate() + 1)));
-  const [endDate, setEndDate] = useState(new Date(new Date().setDate(new Date().getDate() + 2)));
-  const [startTime, setStartTime] = useState('12:00');
-  const [endTime, setEndTime] = useState('12:00');
-  // const [pickUpEnter,setPickUpEnter] = useState(false)
-  // const [dropOffEnter,setDropOffEnter] = useState(false)
-  // const [locationresult,setlocationresult] = useState([])
-  const [selectedPickUp,setSelectedPickUp] = useState('')
-  // const [locationresultDrop,setlocationresultDrop] = useState([])
-  const [selectedDrop,setSelectedDrop] = useState('')
+ 
+  const [selectedPickUp, setSelectedPickUp] = useState(() => {
+    return localStorage.getItem("pickup") || '';
+});
 
-  const [pickUpLocationFull,setPickUpLocationFull] = useState('')
-  const [dropOffLocationFull,setDropOffLocationFull] = useState('')
+const [selectedDrop, setSelectedDrop] = useState(() => {
+    return localStorage.getItem("dropoff") || '';
+});
+
+const [pickUpLocationFull, setPickUpLocationFull] = useState(() => {
+    return localStorage.getItem("pickUpLocationFull") || '';
+});
+
+const [dropOffLocationFull, setDropOffLocationFull] = useState(() => {
+    return localStorage.getItem("dropOffLocationFull") || '';
+});
+
+const [startDate, setStartDate] = useState(() => {
+    const savedStartDate = localStorage.getItem("startDate");
+    return savedStartDate ? new Date(savedStartDate) : new Date(new Date().setDate(new Date().getDate() + 1));
+});
+
+const [endDate, setEndDate] = useState(() => {
+    const savedEndDate = localStorage.getItem("endDate");
+    return savedEndDate ? new Date(savedEndDate) : new Date(new Date().setDate(new Date().getDate() + 2));
+});
+
+const [startTime, setStartTime] = useState(() => {
+    return localStorage.getItem("startTime") || '12:00';
+});
+
+const [endTime, setEndTime] = useState(() => {
+    return localStorage.getItem("endTime") || '12:00';
+});
+
+// Effects to update localStorage when state changes
+useEffect(() => {
+    localStorage.setItem('pickup', selectedPickUp);
+}, [selectedPickUp]);
+
+useEffect(() => {
+    localStorage.setItem('dropoff', selectedDrop);
+}, [selectedDrop]);
+
+useEffect(() => {
+    localStorage.setItem('pickUpLocationFull', pickUpLocationFull);
+}, [pickUpLocationFull]);
+
+useEffect(() => {
+    localStorage.setItem('dropOffLocationFull', dropOffLocationFull);
+}, [dropOffLocationFull]);
+
+useEffect(() => {
+    localStorage.setItem('startDate', startDate.toISOString());
+}, [startDate]);
+
+useEffect(() => {
+    localStorage.setItem('endDate', endDate.toISOString());
+}, [endDate]);
+
+useEffect(() => {
+    localStorage.setItem('startTime', startTime);
+}, [startTime]);
+
+useEffect(() => {
+    localStorage.setItem('endTime', endTime);
+}, [endTime]);
+
+
+
+//   const [selectedPickUp,setSelectedPickUp] = useState(()=>{
+//     let pickUpLocal = localStorage.getItem("pickup");
+//     return pickUpLocal || '';
+//   })
+//   const [selectedDrop,setSelectedDrop] = useState(()=>{
+//     let dropOffLocal = localStorage.getItem("dropoff");
+//     return dropOffLocal || '';
+//   })
+  
+//   useEffect(() => {
+//     localStorage.setItem('pickup', selectedPickUp);
+// }, [selectedPickUp]);
+// useEffect(() => {
+//   localStorage.setItem('dropoff', selectedDrop);
+// }, [selectedDrop]);
+
+//   const [pickUpLocationFull,setPickUpLocationFull] = useState('')
+//   const [dropOffLocationFull,setDropOffLocationFull] = useState('')
+//   const [startDate, setStartDate] = useState(new Date(new Date().setDate(new Date().getDate() + 1)));
+//   const [endDate, setEndDate] = useState(new Date(new Date().setDate(new Date().getDate() + 2)));
+//   const [startTime, setStartTime] = useState('12:00');
+//   const [endTime, setEndTime] = useState('12:00');
+
+
+
   
 
   function changeStartTime(val){

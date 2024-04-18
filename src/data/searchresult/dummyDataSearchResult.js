@@ -32,11 +32,14 @@ const cars = {
   },
 capacity:{
   seats:4,
-  doors:4,
+  doors:5,
   luggage_capacity:{
     large_suitcase:1,
     small_suitcase:1
   }
+},
+features:{
+  air_conditioned:true
 },rate_totals:{
   pay_later:{
     reservation_total:(1134 * days).toFixed(2),
@@ -48,6 +51,7 @@ capacity:{
 },
 type: categoryList[Math.floor(Math.random() * categoryList.length)],
 rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
+ac:true
 },
 {category:{
     make:"Hyundai",
@@ -62,6 +66,8 @@ capacity:{
     large_suitcase:3,
     small_suitcase:2
   }
+},features:{
+  air_conditioned:false
 },rate_totals:{
   pay_later:{
     reservation_total:(4418.46 * days).toFixed(2),
@@ -73,6 +79,7 @@ capacity:{
 }
 ,type: categoryList[Math.floor(Math.random() * categoryList.length)],
 rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
+ac:true
 },
 {category:{
     make:"Hyundai",
@@ -87,6 +94,8 @@ capacity:{
     large_suitcase:1,
     small_suitcase:1
   }
+},features:{
+  air_conditioned:true
 },rate_totals:{
   pay_later:{
     reservation_total:(3740.65 * days).toFixed(2),
@@ -98,12 +107,13 @@ capacity:{
 },
 type: categoryList[Math.floor(Math.random() * categoryList.length)],
 rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
+ac:true
 },
 {category:{
     make:"Toyota",
     model:"Corolla",
     image_url:"https://cdn2.rcstatic.com/images/car_images_b/web/toyota/corolla_lrg.jpg",
-    vehicle_transmission:"Manual"
+    vehicle_transmission:"Automatic"
   },
 capacity:{
   seats:5,
@@ -112,6 +122,8 @@ capacity:{
     large_suitcase:1,
     small_suitcase:1
   }
+},features:{
+  air_conditioned:true
 },rate_totals:{
   pay_later:{
     reservation_total:(3982.99 * days).toFixed(2),
@@ -123,6 +135,7 @@ capacity:{
 },
 type: categoryList[Math.floor(Math.random() * categoryList.length)],
 rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
+ac:false
 },
 {category:{
     make:"Ford",
@@ -137,6 +150,8 @@ capacity:{
     large_suitcase:1,
     small_suitcase:1
   }
+},features:{
+  air_conditioned:false
 },rate_totals:{
   pay_later:{
     reservation_total:(3301.46 * days).toFixed(2),
@@ -148,6 +163,7 @@ capacity:{
 },
 type: categoryList[Math.floor(Math.random() * categoryList.length)],
 rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
+ac:true
 },
 {category:{
     make:"Nissan",
@@ -162,6 +178,8 @@ capacity:{
     large_suitcase:3,
     small_suitcase:1
   }
+},features:{
+  air_conditioned:true
 },rate_totals:{
   pay_later:{
     reservation_total:(4573.52 * days).toFixed(2),
@@ -173,6 +191,7 @@ capacity:{
 },
 type: categoryList[Math.floor(Math.random() * categoryList.length)],
 rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
+ac:true
 },
 {category:{
     make:"Valkswagen",
@@ -187,6 +206,8 @@ capacity:{
     large_suitcase:1,
     small_suitcase:1
   }
+},features:{
+  air_conditioned:true
 },rate_totals:{
   pay_later:{
     reservation_total:(3612.51 * days).toFixed(2),
@@ -198,6 +219,7 @@ capacity:{
 },
 type: categoryList[Math.floor(Math.random() * categoryList.length)],
 rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
+ac:false
 },
 {category:{
     make:"Ford",
@@ -212,6 +234,8 @@ capacity:{
     large_suitcase:1,
     small_suitcase:1
   }
+},features:{
+  air_conditioned:false
 },rate_totals:{
   pay_later:{
     reservation_total:(3746.22 * days).toFixed(2),
@@ -223,6 +247,7 @@ capacity:{
 },
 type: categoryList[Math.floor(Math.random() * categoryList.length)],
 rating: Math.round((Math.random() * 0.4 + 7.5) * 10) / 10,
+ac:true
 }],
 reservation:{
 pickup_location:{

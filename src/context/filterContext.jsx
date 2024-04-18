@@ -12,8 +12,10 @@ export default function FilterProvider({children}) {
     
     const [categoryFilter,setCategoryFilter] = useState(null)
     const [priceFilter,setPriceFilter] = useState([])
-
-
+    const [acFilter,setAcFilter] = useState(null)
+    const [doorsFilter,setDoorsFilter] = useState([])
+    const [transmissionFilter,setTransmissionFilter] = useState([])
+    const [clearFilter,setClearFilter] = useState(null)
 
 
   return (
@@ -21,7 +23,15 @@ export default function FilterProvider({children}) {
     <FilterContext.Provider value={{categoryFilter,
     setCategoryFilter,
     priceFilter,
-    setPriceFilter}} >
+    acFilter,
+    setAcFilter,
+    setPriceFilter,
+    doorsFilter,
+    setDoorsFilter,
+    transmissionFilter,
+    setTransmissionFilter,
+    clearFilter,
+    setClearFilter}} >
       {children}
     </FilterContext.Provider>
   )

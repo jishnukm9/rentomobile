@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import CarCategoryItem from './CarCategoryItem';
 
-export default function CarCategory() {
+export default function CarCategory({selectedCat,setSelectedCat}) {
  
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  // const [selectedCategory, setSelectedCategory] = useState(null);
 
 
   const categories = [
@@ -17,8 +17,8 @@ export default function CarCategory() {
           <CarCategoryItem
             key={category}
             text={category}
-            isSelected={selectedCategory === category}
-            onClick={() => setSelectedCategory(category)}
+            isSelected={selectedCat === category}
+            onClick={() => setSelectedCat(category)}
           />
         ))}
       </ul>

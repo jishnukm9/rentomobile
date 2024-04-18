@@ -12,10 +12,14 @@ import PageNotFound from './pages/PageNotFound';
 import toast, { Toaster } from "react-hot-toast";
 import SearchProvider from './context/SearchContext';
 import FilterProvider from './context/filterContext';
+import CarDetailsPage from './pages/CarDetailsPage';
+import DetailsProvider from './context/DetailsContext';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import CheckoutForm from './features/checkout/CheckoutForm';
 
 
-
-
+const stripePromise = loadStripe('your_stripe_public_key');
 export default function App() {
 
 
@@ -47,20 +51,31 @@ export default function App() {
       <SearchProvider>
         
       <BrowserRouter >
+      <Elements stripe={stripePromise}>
     <Routes>
     
         <Route index element={<Navigate replace to="search" />} />
         <Route path="search" element={<Search/>} />
         <Route path="bookingsearchresult" element={
+           <DetailsProvider>
         <FilterProvider>
         <SearchResults />
         </FilterProvider>
+        </DetailsProvider>
         } />
+        <Route path="cardetails" element={
+        <DetailsProvider><CarDetailsPage/></DetailsProvider>
         
+        
+        } />
+   
+           <Route path="checkout" element={<CheckoutForm />} />
+          
         <Route path="booking" element={<Booking />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+      </Elements>
     </BrowserRouter>
     
     </SearchProvider>

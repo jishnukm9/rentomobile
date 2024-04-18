@@ -1,12 +1,12 @@
 import React from 'react'
 
-export default function SearchListItem({name,type,code,onSelect}) {
+export default function SearchListItem({name,type,code,selectLoc}) {
 
 
   
   function handleClick(){
    
-    onSelect([name,code])
+    selectLoc([name,code])
    
   }
   return (

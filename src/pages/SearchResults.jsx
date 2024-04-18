@@ -21,7 +21,10 @@ const {selectedPickUp,
   endDate,endTime,} = useContext(SearchContext)
 
 
-
+console.log("search context",{selectedPickUp,
+  selectedDrop,
+  startDate,startTime,
+  endDate,endTime,})
 const brand = 'Avis'
 const pickUpDate = startDate.toISOString().slice(0, 10);
 const dropOffDate = endDate.toISOString().slice(0, 10);

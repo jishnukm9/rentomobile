@@ -9,6 +9,7 @@ import { toast } from "react-hot-toast";
 import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../context/SearchContext';
 import { getLocations } from '../../data/search/locations';
+import { FilterContext } from '../../context/filterContext';
 
 
 export default function SearchBox() {
@@ -109,9 +110,23 @@ setDropOffLocationFullSb(drop[0])
 
 
 
-
+// const {setCategoryFilter,setPriceFilter,setAcFilter,setTransmissionFilter,setDoorsFilter}= useContext(FilterContext)
 
 function validateForm(){
+
+
+
+  // setCategoryFilter(null)
+  // setPriceFilter([])
+  // setAcFilter(null)
+  // setTransmissionFilter([])
+  // setDoorsFilter(null)
+
+
+
+
+
+
   if(!startDateSb | !endDateSb | !startTimeSb | !endTimeSb | !selectedPickUpSb | !selectedDropSb){
 toast.error("Invalid Search Informations")
   }else{
@@ -166,7 +181,7 @@ handleSelectedDrop([dropOffLocationFullSb,selectedDropSb])
   <DatePicker dateFormat="dd/MM/yyyy" className='w-[120px]  p-5 focus:outline-none'  selected={startDateSb} minDate={new Date()}  onChange={(date) => setStartDateSb(date)} />
   </div>
   <div className="p-5  lg:border-r-8 lg:border-b-0  md:border-b-8 sm:border-b-8  border-b-8 border-yellow-400 bg-slate-50 ">
-  <TimePicker value={startTimeSb} onchange={changeStartTimeSb} placeholder="Start Time" name="starttime" />
+  <TimePicker className="w-100p" value={startTimeSb} onchange={changeStartTimeSb} placeholder="Start Time" name="starttime" />
 
   </div>
   
@@ -179,7 +194,7 @@ handleSelectedDrop([dropOffLocationFullSb,selectedDropSb])
   </div>
   <div className="p-5 lg:border-b-0  lg:border-r-8  md:border-b-8 sm:border-b-8  border-b-8 border-yellow-400 bg-slate-50 ">
   
-  <TimePicker placeholder="End Time" name="endtime" value={endTimeSb} onchange={changeEndTimeSb} />
+  <TimePicker className="w-100p" placeholder="End Time" name="endtime" value={endTimeSb} onchange={changeEndTimeSb} />
 
   </div>
 
@@ -192,11 +207,11 @@ handleSelectedDrop([dropOffLocationFullSb,selectedDropSb])
 
 
 {pickUpEnterSb && 
-  <div className='bg-slate-50 border absolute w-[500px]  rounded-md'>
+  <div className='bg-slate-50 border absolute w-[500px] z-[1000]  rounded-md'>
 
 {locationresultSb.length == 0 ? <p className=' p-4'>No Result Found !</p>  : <ul className='flex flex-col'>
   {locationresultSb.map((loc)=>
-  (<SearchListItem key={loc.id}  type={loc.type} name={loc.name} code={loc.code}   onSelect={handleSelectedPickUpSb}    />))}
+  (<SearchListItem key={loc.id}  type={loc.type} name={loc.name} code={loc.code}   selectLoc={handleSelectedPickUpSb}    />))}
 </ul> }
 
 
@@ -207,11 +222,11 @@ handleSelectedDrop([dropOffLocationFullSb,selectedDropSb])
 }
 
 {dropOffEnterSb && 
-  <div className='bg-slate-50 border absolute w-[500px]  rounded-md'>
+  <div className='bg-slate-50 border absolute w-[500px]  z-[1000] rounded-md'>
 
 {locationresultDropSb.length == 0 ? <p className=' p-4'>No Result Found !</p>  : <ul className='flex flex-col '>
   {locationresultDropSb.map((loc)=>
-  (<SearchListItem key={loc.id}  type={loc.type} name={loc.name} code={loc.code}   onSelect={handleSelectedDropSb}    />))}
+  (<SearchListItem key={loc.id}  type={loc.type} name={loc.name} code={loc.code}    selectLoc={handleSelectedDropSb}    />))}
 </ul> }
 </div>
  

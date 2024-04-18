@@ -8,19 +8,19 @@ import ModalWindow from '../../ui/ModalWindow'
 import { SearchContext } from '../../context/SearchContext'
 import { getLocations } from '../../data/search/locations'
 
-export default function LocationAndFilter({count}) {
+export default function LocationAndFilter({count,selectedCat,setSelectedCat}) {
 
   const {
     selectedPickUp,selectedDrop} = useContext(SearchContext)
 
   const [showLocationMapModal,setShowLocationMapModal] = useState(false)
 
-  const pickUpLat = getLocations().find((item) => item.code === selectedPickUp).lat
-  const pickUpLng = getLocations().find((item) => item.code === selectedPickUp).lng
-  const dropOffLat = getLocations().find((item) => item.code === selectedDrop).lat
-  const dropOffLng = getLocations().find((item) => item.code === selectedDrop).lng
-  const dropOffLoc = getLocations().find((item) => item.code === selectedDrop).name
-  const pickUpLoc = getLocations().find((item) => item.code === selectedPickUp).name
+  const pickUpLat = getLocations().find((item) => item.code === selectedPickUp)?.lat
+  const pickUpLng = getLocations().find((item) => item.code === selectedPickUp)?.lng
+  const dropOffLat = getLocations().find((item) => item.code === selectedDrop)?.lat
+  const dropOffLng = getLocations().find((item) => item.code === selectedDrop)?.lng
+  const dropOffLoc = getLocations().find((item) => item.code === selectedDrop)?.name
+  const pickUpLoc = getLocations().find((item) => item.code === selectedPickUp)?.name
 
 
   return (
@@ -40,7 +40,7 @@ export default function LocationAndFilter({count}) {
     <p className='text-2xl font-bold mb-2 text-globaltext'>{count} cars available</p>
     <DropDown  className="mb-0" />
     </div>
-  <CarCategory  />
+  <CarCategory selectedCat={selectedCat} setSelectedCat={setSelectedCat}   />
 
     </div>
   </div>

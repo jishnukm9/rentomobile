@@ -12,6 +12,7 @@ import Terms from './Terms'
 import { getLocations } from '../../data/search/locations'
 import LocationMap from './LocationMap'
 import { FilterContext } from '../../context/filterContext'
+import { carSearchResultFilter } from './carSearchFilter'
 
 export default function CarSearchResults({resultData}) {
 
@@ -34,16 +35,16 @@ export default function CarSearchResults({resultData}) {
 
 
         const {
-          categoryFilter,priceFilter} = useContext(FilterContext)
+          categoryFilter,priceFilter,acFilter,doorsFilter,transmissionFilter} = useContext(FilterContext)
 
         
   
     
       
+    
+        const pickUpLoc = getLocations().find((item) => item.code === selectedPickUp)?.name
         const pickUpLat = getLocations().find((item) => item.code === selectedPickUp)?.lat
         const pickUpLng = getLocations().find((item) => item.code === selectedPickUp)?.lng
-        const pickUpLoc = getLocations().find((item) => item.code === selectedPickUp)?.name
-
         function calculateDaysBetweenDates(date1, date2) {
             const ONE_DAY = 1000 * 60 * 60 * 24;
             const differenceMs = Math.abs(date2 - date1);
@@ -55,46 +56,23 @@ export default function CarSearchResults({resultData}) {
           console.log(categoryFilter,priceFilter)
 
     const {data:result,pickUp,locDetails,terms} = carSearchResultsFormatFunc(resultData)
-    let resultFinal;
-    if (categoryFilter && priceFilter.length > 0) {
+   
 
-      const newPriceFilter = priceFilter.map((item)=> {return item.split('-').map(Number)})
-
-      const filnalFilter = newPriceFilter.flat().sort((a, b) => a - b)
-
-      console.log("Filtering by category and price range:", categoryFilter, priceFilter);
-      resultFinal = result.filter(item => {
-          const price = parseFloat(item.price);
-          const minPrice = filnalFilter[0];
-          const maxPrice = filnalFilter.at(-1)  || Infinity
-          return item.type === categoryFilter && price >= minPrice && price <= maxPrice;
-      });
-  } else if (categoryFilter) {
-      console.log("Filtering by category only");
-      resultFinal = result.filter(item => item.type === categoryFilter);
-  } else if (priceFilter.length > 0) {
-      console.log("Filtering by price only");
-      const newPriceFilter = priceFilter.map((item)=> {return item.split('-').map(Number)})
-
-      const filnalFilter = newPriceFilter.flat().sort((a, b) => a - b)
-
-      console.log(filnalFilter)
-      resultFinal = result.filter(item => {
-          const price = parseFloat(item.price);
-          const minPrice = filnalFilter[0];
-          const maxPrice =filnalFilter.at(-1) || Infinity
-          console.log("min",minPrice,"max",maxPrice)
-          return price >= minPrice && price <= maxPrice;
-      });
-  } else {
-      resultFinal = result;
-  }
+    const resultFinal = carSearchResultFilter(result,priceFilter,categoryFilter,acFilter,doorsFilter,transmissionFilter)
 
 
     const carCount = resultFinal?.length
 
     // console.log("loc details-",locDetails)
     console.log("result- final",resultFinal)
+
+
+
+
+    const [selectedCategory, setSelectedCategory] = useState(null);
+
+
+
   return (
     <div className='my-5 '>
 
@@ -105,11 +83,14 @@ export default function CarSearchResults({resultData}) {
 
 <>
 <ModifySearch />
- <LocationAndFilter count={carCount} />
+ <LocationAndFilter count={carCount} selectedCat={selectedCategory} setSelectedCat={setSelectedCategory} />
 
  <div  className='max-w-[1125px] grid lg:grid-cols-[3fr,7fr] gap-10 my-5 mx-auto'>
+   <div>
+   <SearchFilter clearCategory={setSelectedCategory} />
+   </div>
   
-    <SearchFilter />
+   
 
     <div className='p-0 lg:p-0'>
 

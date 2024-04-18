@@ -29,7 +29,7 @@ function funcViewDetails(){
   return (
     <div
     
-   className='my-2 border rounded-md'>
+   className='my-2 border-0 rounded-md'>
 
      <div className='grid lg:grid-cols-[1fr,2fr,1fr] p-3 '>
        <div  className='flex justify-center items-center p-3'>
@@ -60,10 +60,10 @@ function funcViewDetails(){
 <div className='mt-auto'>
          <div className='text-right mb-2'>
          <p className='text-xs mb-1'>{days == 0 ? 'Price for 1 day:' : `Price for ${days} days:`}</p>
-         <p className='text-2xl font-bold text-globaltext'>{data.price} {data.currency}</p>
+         <p className='text-3xl font-bold text-globaltext'>{data.price} {data.currency}</p>
          
          </div>
-         <button className='w-100p bg-green-600 hover:bg-green-700 px-3 py-2 text-white rounded-md' onClick={funcViewDetails}>View Deal</button>
+         {/* <button className='w-100p bg-green-600 hover:bg-green-700 px-3 py-2 text-white rounded-md' onClick={funcViewDetails}>View Deal</button> */}
          </div>
        </div>
 
@@ -95,15 +95,15 @@ showLocFunc((val)=> {
   return (!val)
 } )
     }}>Location info</a>
-    <a href="http://" className='text-blue-600'  onClick={(e)=> {
+    {/* <a href="http://" className='text-blue-600'  onClick={(e)=> {
 e.preventDefault()
 showTermsFunc((val)=> (!val) )
-    }}>Terms and Conditions</a>
+    }}>Terms and Conditions</a> */}
   </div>
   
 </div>
 </div>
-
+<hr  className="mt-2"/>
    </div>
   )
 }

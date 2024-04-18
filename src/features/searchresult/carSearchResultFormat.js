@@ -20,7 +20,8 @@ export function carSearchResultsFormatFunc(data){
         price : item.rate_totals.pay_later.reservation_total,
         currency: item.rate_totals.rate.currency,
         rating: item.rating,
-        type:item.type
+        type:item.type,
+        ac:item.features?.air_conditioned
       }));
 
       const pickUp = data?.reservation?.pickup_location?.location?.name;
