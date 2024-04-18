@@ -7,8 +7,10 @@ export default function CarCategory({selectedCat,setSelectedCat}) {
 
 
   const categories = [
-    "Medium Car", "Small Car", "Large Car", "SUV's", "People carrier", "Premium Car", "Estate"
+    "Medium Car", "Small Car", "Large Car", "SUV's", "People carrier"
   ];
+  
+    // "Medium Car", "Small Car", "Large Car", "SUV's", "People carrier", "Premium Car", "Estate"
 
   return (
     <div>
