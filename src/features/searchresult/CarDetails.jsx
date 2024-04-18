@@ -95,10 +95,10 @@ showLocFunc((val)=> {
   return (!val)
 } )
     }}>Location info</a>
-    <a href="http://" className='text-blue-600'  onClick={(e)=> {
+    {/* <a href="http://" className='text-blue-600'  onClick={(e)=> {
 e.preventDefault()
 showTermsFunc((val)=> (!val) )
-    }}>Terms and Conditions</a>
+    }}>Terms and Conditions</a> */}
   </div>
   
 </div>
