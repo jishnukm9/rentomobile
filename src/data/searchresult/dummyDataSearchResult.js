@@ -70,7 +70,7 @@ capacity:{
   air_conditioned:false
 },rate_totals:{
   pay_later:{
-    reservation_total:(4418.46 * days).toFixed(2),
+    reservation_total:(1518.46 * days).toFixed(2),
 
   },
   rate:{
@@ -98,7 +98,7 @@ capacity:{
   air_conditioned:true
 },rate_totals:{
   pay_later:{
-    reservation_total:(3740.65 * days).toFixed(2),
+    reservation_total:(1569.65 * days).toFixed(2),
 
   },
   rate:{
@@ -126,7 +126,7 @@ capacity:{
   air_conditioned:true
 },rate_totals:{
   pay_later:{
-    reservation_total:(3982.99 * days).toFixed(2),
+    reservation_total:(1998.99 * days).toFixed(2),
 
   },
   rate:{
@@ -154,7 +154,7 @@ capacity:{
   air_conditioned:false
 },rate_totals:{
   pay_later:{
-    reservation_total:(3301.46 * days).toFixed(2),
+    reservation_total:(5609.46 * days).toFixed(2),
 
   },
   rate:{
@@ -182,7 +182,7 @@ capacity:{
   air_conditioned:true
 },rate_totals:{
   pay_later:{
-    reservation_total:(4573.52 * days).toFixed(2),
+    reservation_total:(6578.52 * days).toFixed(2),
 
   },
   rate:{
@@ -210,7 +210,7 @@ capacity:{
   air_conditioned:true
 },rate_totals:{
   pay_later:{
-    reservation_total:(3612.51 * days).toFixed(2),
+    reservation_total:(15678.51 * days).toFixed(2),
 
   },
   rate:{
@@ -238,7 +238,7 @@ capacity:{
   air_conditioned:false
 },rate_totals:{
   pay_later:{
-    reservation_total:(3746.22 * days).toFixed(2),
+    reservation_total:(15698.22 * days).toFixed(2),
 
   },
   rate:{
