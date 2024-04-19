@@ -7,14 +7,14 @@ export default function CarCategory({selectedCat,setSelectedCat}) {
 
 
   const categories = [
-    "Medium Car", "Small Car", "Large Car", "SUV's", "People carrier"
+     "Medium Car", "Small Car", "Large Car", "SUV's", "People carrier", "Premium Car", "Estate"
   ];
   
-    // "Medium Car", "Small Car", "Large Car", "SUV's", "People carrier", "Premium Car", "Estate"
+   
 
   return (
     <div>
-      <ul className='flex items-center text-xs lg:text-1xl'>
+      <ul className='flex flex-wrap items-center text-xs lg:text-1xl'>
         {categories.map((category) => (
           <CarCategoryItem
             key={category}

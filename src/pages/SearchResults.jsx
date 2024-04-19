@@ -61,7 +61,11 @@ let searchResultData = resultData;
 
 
 <ModalWindow />
-{isLoading ? <SearchLoading /> :  <CarSearchResults resultData={searchResultData} /> }
+{isLoading ?
+  <div className='px-3 lg:px-0'>
+<SearchLoading />
+</div>
+:  <CarSearchResults resultData={searchResultData} /> }
 
 
 

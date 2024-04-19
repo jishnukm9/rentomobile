@@ -26,8 +26,8 @@ export default function DropDown() {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <div className="py-1">
-            <Menu.Item>
+          {/* <div className="py-1"> */}
+            {/* <Menu.Item>
               {({ active }) => (
                 <a
                   href="#"
@@ -39,8 +39,8 @@ export default function DropDown() {
                   Price Lowest
                 </a>
               )}
-            </Menu.Item>
-            <Menu.Item>
+            </Menu.Item> */}
+            {/* <Menu.Item>
               {({ active }) => (
                 <a
                   href="#"
@@ -52,8 +52,8 @@ export default function DropDown() {
                   Top Reviewed
                 </a>
               )}
-            </Menu.Item>
-          </div>
+            </Menu.Item> */}
+          {/* </div> */}
           
       
         </Menu.Items>

@@ -35,7 +35,7 @@ export default function LocationAndFilter({count,selectedCat,setSelectedCat}) {
     <ButtonSmall  text="Show on map" />
     </div>
     </div>
-    <div className='flex flex-col justify-between p-5 lg:p-0 gap-5'>
+    <div className='flex flex-col justify-between p-1  lg:p-0 gap-5'>
       <div>
     <p className='text-2xl font-bold mb-2 text-globaltext'>{count} cars available</p>
     <DropDown  className="mb-0" />
