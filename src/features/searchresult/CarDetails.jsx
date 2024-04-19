@@ -11,13 +11,13 @@ export default function CarDeatils({data,days,pickUp,locDetails,terms,showLocFun
 
   const navigate = useNavigate()
   
-  const {setCarDetails} = useContext(DetailsContext)
+  const {setCarDetails,setLocDetails} = useContext(DetailsContext)
   // console.log(useContext(DetailsContext))
 function funcViewDetails(){
 
 
   setCarDetails(data)
-
+setLocDetails(locDetails)
 
 
 

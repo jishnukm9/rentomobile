@@ -12,11 +12,13 @@ import ButtonSmall from '../ui/ButtonSmall'
 import Footer from '../ui/Footer'
 import Navbar from '../ui/Navbar'
 import { useNavigate } from 'react-router-dom';
+import LocationDetails from '../features/searchresult/LocationDetails'
+import ModalWindow from '../ui/ModalWindow'
 export default function CarDetailsPage() {
 
 
   const navigate = useNavigate();
-    const {carDetails,setCarDetails} = useContext(DetailsContext)
+    const {carDetails,setCarDetails,locDetails, setLocDetails} = useContext(DetailsContext)
 
 // console.log("car deails",carDetails,useContext(DetailsContext))
 const [showLocationModal,setShowLocationmodal] = useState(false)
@@ -82,7 +84,7 @@ function calculateDaysBetweenDates(date1, date2) {
 
    <hr className='mb-3 ' />
   
-<CarDeatilsCheckout showPickMapFunc={setShowPickUpMap} data={carDetails} days={calculateDaysBetweenDates( endDate,startDate)} pickUp={pickUpLoc} locDetails={'ocDetails'} showLocFunc={setShowLocationmodal}    />
+<CarDeatilsCheckout showPickMapFunc={setShowPickUpMap} data={carDetails} days={calculateDaysBetweenDates( endDate,startDate)} pickUp={pickUpLoc} locDetails={locDetails} showLocFunc={setShowLocationmodal}    />
 
 <div onClick={checkoutFunc} className='mt-5 float-right'>
 <ButtonSmall   text="Continue to Book" />
@@ -156,7 +158,7 @@ function calculateDaysBetweenDates(date1, date2) {
 <Banner/>
 <Footer/>
 </div>
-
+{showLocationModal && <ModalWindow closeModal={setShowLocationmodal} open={showLocationModal}><LocationDetails locs={locDetails}/></ModalWindow>}
     </div>
   )
 }

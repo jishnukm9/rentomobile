@@ -19,12 +19,26 @@ export default function DetailsProvider({children}) {
     useEffect(() => {
         localStorage.setItem('carDetails', JSON.stringify(carDetails));
     }, [carDetails]);
+
+
+
+
+
+    const [locDetails, setLocDetails] = useState(() => {
+      const savedLocDetails = localStorage.getItem('locDetails');
+      return savedLocDetails ? JSON.parse(savedLocDetails) : {};
+  });
+
+  // Use useEffect to update localStorage when carDetails changes
+  useEffect(() => {
+      localStorage.setItem('locDetails', JSON.stringify(locDetails));
+  }, [locDetails]);
    
 
 
   return (
   
-    <DetailsContext.Provider value={{carDetails,setCarDetails}} >
+    <DetailsContext.Provider value={{carDetails,setCarDetails,locDetails, setLocDetails}} >
       {children}
     </DetailsContext.Provider>
   )
