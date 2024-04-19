@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import TimePicker from '../../ui/TimePicker';
@@ -45,8 +45,8 @@ const [selectedPickUpSb,setSelectedPickUpSb] = useState(selectedPickUp)
 const [locationresultDropSb,setlocationresultDropSb] = useState(locationsFull )
 const [selectedDropSb,setSelectedDropSb] = useState(selectedDrop)
 
-const [pickUpLocationFullSb,setPickUpLocationFullSb] = useState('')
-const [dropOffLocationFullSb,setDropOffLocationFullSb] = useState('')
+const [pickUpLocationFullSb,setPickUpLocationFullSb] = useState(pickUpLocationFull)
+const [dropOffLocationFullSb,setDropOffLocationFullSb] = useState(dropOffLocationFull)
 
 function changeStartTimeSb(val){
   setStartTimeSb(val)
@@ -107,21 +107,7 @@ setDropOffLocationFullSb(drop[0])
 
 
 
-
-
-
-// const {setCategoryFilter,setPriceFilter,setAcFilter,setTransmissionFilter,setDoorsFilter}= useContext(FilterContext)
-
 function validateForm(){
-
-
-
-  // setCategoryFilter(null)
-  // setPriceFilter([])
-  // setAcFilter(null)
-  // setTransmissionFilter([])
-  // setDoorsFilter(null)
-
 
 
 
@@ -148,64 +134,40 @@ handleSelectedDrop([dropOffLocationFullSb,selectedDropSb])
 
 
 
-
+ const [pickUpInput, setPickUpInput] = useState('');
+ const [dropOffInput, setDropOffInput] = useState('');
+ 
+ useEffect(() => {
+   if (pickUpLocationFullSb) {
+     setPickUpInput(pickUpLocationFullSb);
+   }
+ }, [pickUpLocationFullSb]);
+ 
+ useEffect(() => {
+   if (dropOffLocationFullSb) {
+     setDropOffInput(dropOffLocationFullSb);
+   }
+ }, [dropOffLocationFullSb]);
 
 
 
 
   return (
-    <div className='relative'>
+    <div >
       
       <div className="border-8 border-yellow-400 rounded-md grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-[3fr,3fr,1fr,1fr,1fr]">
-  <div className=" lg:border-r-8 lg:border-b-0   md:border-b-8 sm:border-b-8 border-b-8 border-yellow-400 bg-slate-50 ">
+  <div className="relative lg:border-r-8 lg:border-b-0   md:border-b-8 sm:border-b-8 border-b-8 border-yellow-400 bg-slate-50 ">
   <input 
   type="text" 
-  className='rounded-md p-5 w-full h-full rounded-md focus:outline-none' 
+  className='rounded-md p-5 w-full h-full focus:outline-none' 
   placeholder='Pick-Up Location' 
-  value={locationresultSb.find((item)=> item.code === selectedPickUpSb)?.name}
-  onBlur={()=> {setPickUpEnterSb(false)}}
-  onChange={(e) => {getLocationDetailsSb(e)}}
+  value={pickUpInput}
+  onBlur={() => setPickUpEnterSb(false)}
+  onChange={(e) => {
+    setPickUpInput(e.target.value);
+    getLocationDetailsSb(e);
+  }}
 />
-
-  </div>
-  <div className=' lg:border-r-8 lg:border-b-0  md:border-b-8 sm:border-b-8  border-b-8 border-yellow-400 bg-slate-50 '>
-  <input type="text" className='roundex-md p-5 w-100p h-100p rounded-md focus:outline-none' placeholder='Drop-Off Location'
- value={locationresultDropSb.find((item)=> item.code === selectedDropSb)?.name}
-  onBlur={()=> {setDropOffEnterSb(false)}}
-  onChange={(e) => {getLocationDetailsDropSb(e)}}
-   />
-  </div>
-  <div className="grid grid-cols-1  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr,1fr]  border-yellow-400 bg-slate-50">
-  <div className=" lg:border-r-8 lg:border-b-0  md:border-b-8 md:border-r-8 sm:border-b-8  border-b-8  border-yellow-400 bg-slate-50 ">
- 
-  <DatePicker dateFormat="dd/MM/yyyy" className='w-[120px]  p-5 focus:outline-none'  selected={startDateSb} minDate={new Date()}  onChange={(date) => setStartDateSb(date)} />
-  </div>
-  <div className="p-5  lg:border-r-8 lg:border-b-0  md:border-b-8 sm:border-b-8  border-b-8 border-yellow-400 bg-slate-50 ">
-  <TimePicker className="w-100p" value={startTimeSb} onchange={changeStartTimeSb} placeholder="Start Time" name="starttime" />
-
-  </div>
-  
-  </div>
-  <div className="grid grid-cols-1 lg:grid-cols-[2fr,1fr] md:grid-cols-2 sm:grid-cols-1  border-yellow-400 bg-slate-50">
-
-
-  <div className=" lg:border-r-8 lg:border-b-0  md:border-b-8  md:border-r-8 sm:border-b-8  border-b-8 border-yellow-400 bg-slate-50 ">
-  <DatePicker dateFormat="dd/MM/yyyy" className='w-[120px] p-5 focus:outline-none'  selected={endDateSb} minDate={new Date()} onChange={(date) => setEndDateSb(date)} />
-  </div>
-  <div className="p-5 lg:border-b-0  lg:border-r-8  md:border-b-8 sm:border-b-8  border-b-8 border-yellow-400 bg-slate-50 ">
-  
-  <TimePicker className="w-100p" placeholder="End Time" name="endtime" value={endTimeSb} onchange={changeEndTimeSb} />
-
-  </div>
-
-
-  </div>
-  <div className="    border-yellow-400 bg-slate-50 ">
-    <button className='bg-green-600 p-5 w-100p text-white hover:bg-green-700 font-bold text-xl' onClick={()=> validateForm()}>Search</button>
-  </div>
-</div>
-
-
 {pickUpEnterSb && 
   <div className='bg-slate-50 border absolute w-[500px] z-[1000]  rounded-md'>
 
@@ -220,6 +182,19 @@ handleSelectedDrop([dropOffLocationFullSb,selectedDropSb])
 </div>
  
 }
+  </div>
+  <div className='relative lg:border-r-8 lg:border-b-0  md:border-b-8 sm:border-b-8  border-b-8 border-yellow-400 bg-slate-50 '>
+  <input 
+  type="text" 
+  className='rounded-md p-5 w-full h-full focus:outline-none' 
+  placeholder='Drop-Off Location' 
+  value={dropOffInput}
+  onBlur={() => setDropOffEnterSb(false)}
+  onChange={(e) => {
+    setDropOffInput(e.target.value);
+    getLocationDetailsDropSb(e);
+  }}
+/>
 
 {dropOffEnterSb && 
   <div className='bg-slate-50 border absolute w-[500px]  z-[1000] rounded-md'>
@@ -231,6 +206,42 @@ handleSelectedDrop([dropOffLocationFullSb,selectedDropSb])
 </div>
  
 }
+  </div>
+  <div className="grid grid-cols-1  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr,1fr]  border-yellow-400 bg-slate-50">
+  <div className=" lg:border-r-8 lg:border-b-0  md:border-b-8 md:border-r-8 sm:border-b-8  border-b-8  border-yellow-400 bg-slate-50 ">
+ 
+  <DatePicker dateFormat="dd/MM/yyyy" className='lg:w-[120px]  p-5 focus:outline-none'  selected={startDateSb} minDate={new Date()}  onChange={(date) => setStartDateSb(date)} />
+  </div>
+  <div className="p-5  lg:border-r-8 lg:border-b-0  md:border-b-8 sm:border-b-8  border-b-8 border-yellow-400 bg-slate-50 ">
+  <TimePicker className="w-100p" value={startTimeSb} onchange={changeStartTimeSb} placeholder="Start Time" name="starttime" />
+
+  </div>
+  
+  </div>
+  <div className="grid grid-cols-1 lg:grid-cols-[2fr,1fr] md:grid-cols-2 sm:grid-cols-1  border-yellow-400 bg-slate-50">
+
+
+  <div className=" lg:border-r-8 lg:border-b-0  md:border-b-8  md:border-r-8 sm:border-b-8  border-b-8 border-yellow-400 bg-slate-50 ">
+  <DatePicker dateFormat="dd/MM/yyyy" className='  lg:w-[120px] p-5 focus:outline-none'  selected={endDateSb} minDate={new Date()} onChange={(date) => setEndDateSb(date)} />
+  </div>
+  <div className="p-5 lg:border-b-0  lg:border-r-8  md:border-b-8 sm:border-b-8  border-b-8 border-yellow-400 bg-slate-50 ">
+  
+  <TimePicker placeholder="End Time" name="endtime" value={endTimeSb} onchange={changeEndTimeSb} />
+
+  </div>
+
+
+  </div>
+  <div className="    border-yellow-400 bg-slate-50 ">
+    <button className='bg-green-600 p-5 w-100p text-white hover:bg-green-700 font-bold text-xl' onClick={()=> validateForm()}>Search</button>
+  </div>
+</div>
+
+
+
+
+
+
 </div>
   )
 }
