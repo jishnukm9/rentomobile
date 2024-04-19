@@ -55,13 +55,22 @@ function calculateDaysBetweenDates(date1, date2) {
     <div className='bg-blue-600 mb-5'>
 <Navbar />
 </div>
+
+<div className='px-3 lg:px-0'>
 <ModifySearch/>
+</div>
 
 
+<div className='px-3 lg:px-0'>
 <div className='max-w-[1125px] my-5 mx-auto'>
 <a className='text-blue-600 border-b-2 border-blue-400 cursor-pointer' onClick={()=> {navigate(-1)}} >Back to Search results</a>
    <h2 className='text-3xl font-bold mb-3 mt-3'>Your Deal</h2>
 </div>
+</div>
+
+
+
+<div className='px-3 lg:px-0'>
 <div  className='max-w-[1125px] grid lg:grid-cols-[7fr,3fr] gap-10 my-5 mx-auto'>
    
   
@@ -132,6 +141,16 @@ function calculateDaysBetweenDates(date1, date2) {
    </div>
   
 </div>
+
+</div>
+
+
+
+
+
+
+
+
 
 <div className='mt-5'>
 <Banner/>

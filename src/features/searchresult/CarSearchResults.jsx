@@ -82,17 +82,23 @@ export default function CarSearchResults({resultData}) {
 
 
 <>
+<div  className='px-3 lg:px-0'>
 <ModifySearch />
- <LocationAndFilter count={carCount} selectedCat={selectedCategory} setSelectedCat={setSelectedCategory} />
+</div>
+
+<div className='px-3 lg:px-0'>
+<LocationAndFilter count={carCount} selectedCat={selectedCategory} setSelectedCat={setSelectedCategory} />
+</div>
+ 
 
  <div  className='max-w-[1125px] grid lg:grid-cols-[3fr,7fr] gap-10 my-5 mx-auto'>
-   <div>
+   <div className='px-3 lg:px-0'>
    <SearchFilter clearCategory={setSelectedCategory} />
    </div>
   
    
 
-    <div className='p-0 lg:p-0'>
+    <div className='px-3 lg:px-0'>
 
    { resultFinal?.map((element,index) => 
    
