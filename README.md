@@ -5,14 +5,15 @@
 
 <b>Technologies Used:</b>
 
-  React: Utilized for building the user interface, React’s component-based architecture facilitates efficient management of the site’s views and states, allowing for dynamic updates and scalable features.
-  React Router: This tool provides seamless navigation between different pages and components without refreshing the browser, making the user experience smooth and consistent.
-  React Query: Used for fetching, caching, and updating the data in the application, React Query optimizes data synchronization with the backend, reducing the need for manual state management and improving         
-  performance.
-  Context API: This feature of React enables state management within the app, which is crucial for maintaining the states related to user authentication, session management, and settings across various components 
+  <b>React:</b> Utilized for building the user interface, React’s component-based architecture facilitates efficient management of the site’s views and states, allowing for dynamic updates and scalable features.<br>
+  <b>React Router:</b> This tool provides seamless navigation between different pages and components without refreshing the browser, making the user experience smooth and consistent.<Br>
+  <b>React Query:</b> Used for fetching, caching, and updating the data in the application, React Query optimizes data synchronization with the backend, reducing the need for manual state management and improving         
+  performance.<br>
+  <b>Context API:</b> This feature of React enables state management within the app, which is crucial for maintaining the states related to user authentication, session management, and settings across various 
+  components 
   without prop drilling.
-  Avis Car Booking API: Integrating Avis API allows Rentomobile to offer a wide range of vehicles for rent, handling bookings, and managing vehicle information directly through Avis’s robust system. This 
-  integration ensures up-to-date access to vehicle availability and rates, enhancing the booking process.
+  <b>Avis Car Booking API:</b> Integrating Avis API allows Rentomobile to offer a wide range of vehicles for rent, handling bookings, and managing vehicle information directly through Avis’s robust system. This 
+  integration ensures up-to-date access to vehicle availability and rates, enhancing the booking process.<br>
 
 
 ![image](https://github.com/jishnukm9/rentomobile/assets/99253054/a7d3d538-64d6-42a9-9a7a-cdf6c67eb863)
