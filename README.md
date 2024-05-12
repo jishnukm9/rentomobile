@@ -1,4 +1,4 @@
-Overview:
+<b>Overview<b>:
 
   Rentomobile is an innovative car booking platform designed to streamline the process of renting vehicles for users. Developed using React, this web application leverages cutting-edge technologies and industry- 
   standard APIs to deliver a user-friendly, efficient, and secure car rental experience.
