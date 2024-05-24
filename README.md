@@ -11,7 +11,7 @@
   performance.<br>
   <b>Context API:</b> This feature of React enables state management within the app, which is crucial for maintaining the states related to user authentication, session management, and settings across various 
   components 
-  without prop drilling.
+  without prop drilling.</br>
   <b>Avis Car Booking API:</b> Integrating Avis API allows Rentomobile to offer a wide range of vehicles for rent, handling bookings, and managing vehicle information directly through Avis’s robust system. This 
   integration ensures up-to-date access to vehicle availability and rates, enhancing the booking process.<br>
 
