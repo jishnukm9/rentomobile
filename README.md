@@ -13,7 +13,7 @@ Rentomobile is a car booking platform designed to streamline the process of rent
 ## Demo
 
 Check out the project in action <a href="https://rentomobile.vercel.app/">here</a>. 
-<br>
+<br><br>
 
 
 ![image](https://github.com/jishnukm9/rentomobile/assets/99253054/a7d3d538-64d6-42a9-9a7a-cdf6c67eb863)
