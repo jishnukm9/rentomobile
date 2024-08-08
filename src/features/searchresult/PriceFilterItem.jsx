@@ -22,7 +22,7 @@ export default function PriceFilterItem({ text, val }) {
     }, [priceFilter, val]);
      
 
-    console.log("price f",priceFilter)
+
 
     return (
         <div className='py-1'>

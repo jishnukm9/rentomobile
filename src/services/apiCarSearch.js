@@ -3,7 +3,12 @@ import { json } from "react-router-dom"
 
 export async function getCars(pickUpDate, dropOffDate,pickUpTime,dropOffTime ,pickUpLocation,dropOffLocation,brand,countryCode) {
 
+  const clientId = process.env.CLIENT_ID;
+  const clientSecret = process.env.CLIENT_SECRET;
 
+  console.log("id and secret below")
+
+  console.log(clientId,clientSecret)
     
   let token;
 
@@ -12,8 +17,8 @@ export async function getCars(pickUpDate, dropOffDate,pickUpTime,dropOffTime ,pi
       method: 'GET', 
       headers: {
         'Content-Type': 'application/json',
-        "client_id": "c55a0427",
-        "client_secret":  "bbefe5c6c3daf7dc20fb7c74f4398e1b", 
+        "client_id": clientId,
+        "client_secret":  clientSecret, 
       },
 
     });
@@ -30,7 +35,7 @@ export async function getCars(pickUpDate, dropOffDate,pickUpTime,dropOffTime ,pi
   }
 
 
-  console.log("searh query from getCars",pickUpDate, dropOffDate,pickUpTime,dropOffTime ,pickUpLocation,dropOffLocation,brand,countryCode,token)
+
 
 
   try {
@@ -38,7 +43,7 @@ export async function getCars(pickUpDate, dropOffDate,pickUpTime,dropOffTime ,pi
         method: 'GET', 
         headers: {
           'Content-Type': 'application/json',
-          "client_id": "c55a0427",
+          "client_id": clientId,
           'Authorization': `Bearer ${token}` 
         },
 

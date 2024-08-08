@@ -42,11 +42,11 @@ function CheckoutForm() {
     });
 
     if (error) {
-      console.log('[error]', error);
+     
       navigate("/search")
       
     } else {
-      console.log('PaymentMethod:', paymentMethod);
+     
       navigate("/search")
     }
   };

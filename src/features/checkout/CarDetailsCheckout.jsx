@@ -12,7 +12,7 @@ export default function CarDeatils({data,days,pickUp,locDetails,terms,showLocFun
   const navigate = useNavigate()
   
   const {setCarDetails} = useContext(DetailsContext)
-  // console.log(useContext(DetailsContext))
+
 function funcViewDetails(){
 
 
@@ -91,7 +91,7 @@ function funcViewDetails(){
 e.preventDefault()
 
 showLocFunc((val)=> {
-  console.log(val)
+ 
   return (!val)
 } )
     }}>Location info</a>

@@ -21,10 +21,7 @@ const {selectedPickUp,
   endDate,endTime,} = useContext(SearchContext)
 
 
-console.log("search context",{selectedPickUp,
-  selectedDrop,
-  startDate,startTime,
-  endDate,endTime,})
+
 const brand = 'Avis'
 const pickUpDate = startDate.toISOString().slice(0, 10);
 const dropOffDate = endDate.toISOString().slice(0, 10);
@@ -34,7 +31,7 @@ const pickUpLocation = selectedPickUp;
 const dropOffLocation = selectedDrop;
 const countryCode = "IN";
 
-// console.log("search query-",pickUpDate, dropOffDate,pickUpTime,dropOffTime ,pickUpLocation,dropOffLocation,brand,countryCode)
+
 const { isLoading, error, cars } = useSearch(pickUpDate, dropOffDate,pickUpTime,dropOffTime ,pickUpLocation,dropOffLocation,brand,countryCode);
 
 let resultData = cars

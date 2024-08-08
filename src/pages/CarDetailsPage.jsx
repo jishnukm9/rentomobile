@@ -20,7 +20,7 @@ export default function CarDetailsPage() {
   const navigate = useNavigate();
     const {carDetails,setCarDetails,locDetails, setLocDetails} = useContext(DetailsContext)
 
-// console.log("car deails",carDetails,useContext(DetailsContext))
+
 const [showLocationModal,setShowLocationmodal] = useState(false)
 const [showTermsModal,setShowTermsmodal] = useState(false)
 
