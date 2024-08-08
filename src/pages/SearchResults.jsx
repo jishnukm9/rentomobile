@@ -13,7 +13,7 @@ import { FilterContext } from '../context/filterContext';
 
 export default function SearchResults() {
 
-
+ 
 
 const {selectedPickUp,
   selectedDrop,
