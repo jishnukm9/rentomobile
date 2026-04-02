@@ -1,0 +1,94 @@
+{
+  "cities": [
+    {
+      "id": "varkala",
+      "name": "Varkala",
+      "locations": [
+        {
+          "name": "Varkala Helipad",
+          "code": "VKL",
+          "type": "Helipad",
+          "id": 101,
+          "lat": 8.7398,
+          "lng": 76.7176
+        },
+        {
+          "name": "Varkala Beach",
+          "code": "VKB",
+          "type": "Beach",
+          "id": 102,
+          "lat": 8.7324,
+          "lng": 76.7121
+        },
+        {
+          "name": "Varkala Cliff",
+          "code": "VKC",
+          "type": "Cliff",
+          "id": 103,
+          "lat": 8.7356,
+          "lng": 76.7150
+        }
+      ]
+    },
+    {
+      "id": "kochi",
+      "name": "Kochi",
+      "locations": [
+        {
+          "name": "Cochin Airport (COK)",
+          "code": "COK",
+          "type": "Airport",
+          "id": 201,
+          "lat": 10.151783,
+          "lng": 76.392960
+        },
+        {
+          "name": "Kochi Fort",
+          "code": "KFC",
+          "type": "City",
+          "id": 202,
+          "lat": 9.9650,
+          "lng": 76.2419
+        },
+        {
+          "name": "MG Road",
+          "code": "MGR",
+          "type": "City",
+          "id": 203,
+          "lat": 9.9847,
+          "lng": 76.2836
+        }
+      ]
+    },
+    {
+      "id": "wayanad",
+      "name": "Wayanad",
+      "locations": [
+        {
+          "name": "Kalpetta",
+          "code": "KLP",
+          "type": "City",
+          "id": 301,
+          "lat": 11.6126,
+          "lng": 76.0842
+        },
+        {
+          "name": "Sulthan Bathery",
+          "code": "SLB",
+          "type": "City",
+          "id": 302,
+          "lat": 11.5561,
+          "lng": 76.2504
+        },
+        {
+          "name": "Mananthavady",
+          "code": "MND",
+          "type": "City",
+          "id": 303,
+          "lat": 11.8043,
+          "lng": 76.0235
+        }
+      ]
+    }
+  ]
+}

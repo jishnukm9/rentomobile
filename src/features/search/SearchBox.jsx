@@ -6,12 +6,12 @@ import SearchListItem from '../../ui/SearchListItem';
 import { toast } from "react-hot-toast";
 import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../context/SearchContext';
-import { getLocations } from '../../data/search/locations';
 
 export default function SearchBox() {
     const navigate = useNavigate();
 
     const {
+        selectedCity,
         selectedPickUp,
         selectedDrop,
         handleSelectedPickUp,
@@ -37,27 +37,34 @@ export default function SearchBox() {
     const [pickUpEnterSb, setPickUpEnterSb] = useState(false);
     const [dropOffEnterSb, setDropOffEnterSb] = useState(false);
     const [locationresultSb, setlocationresultSb] = useState(locationsFull);
-    const [selectedPickUpSb, setSelectedPickUpSb] = useState(selectedPickUp);
+    const [selectedPickUpSb, setSelectedPickUpSb] = useState('');
     const [locationresultDropSb, setlocationresultDropSb] = useState(locationsFull);
-    const [selectedDropSb, setSelectedDropSb] = useState(selectedDrop);
-    const [pickUpLocationFullSb, setPickUpLocationFullSb] = useState(pickUpLocationFull);
-    const [dropOffLocationFullSb, setDropOffLocationFullSb] = useState(dropOffLocationFull);
+    const [selectedDropSb, setSelectedDropSb] = useState('');
+    const [pickUpLocationFullSb, setPickUpLocationFullSb] = useState('');
+    const [dropOffLocationFullSb, setDropOffLocationFullSb] = useState('');
     const [pickUpInput, setPickUpInput] = useState('');
     const [dropOffInput, setDropOffInput] = useState('');
 
     useEffect(() => {
+        setlocationresultSb(locationsFull);
+        setlocationresultDropSb(locationsFull);
+    }, [locationsFull]);
+
+    useEffect(() => {
         if (pickUpLocationFullSb) {
             setPickUpInput(pickUpLocationFullSb);
+        } else {
+            setPickUpInput('');
         }
     }, [pickUpLocationFullSb]);
 
     useEffect(() => {
         if (dropOffLocationFullSb) {
             setDropOffInput(dropOffLocationFullSb);
+        } else {
+            setDropOffInput('');
         }
     }, [dropOffLocationFullSb]);
-
-    const locations = getLocations();
 
     function changeStartTimeSb(val) {
         setStartTimeSb(val);
@@ -70,7 +77,7 @@ export default function SearchBox() {
     function getLocationDetailsSb(e) {
         setPickUpEnterSb(true);
 
-        const resultLoc = locations.filter((item) => {
+        const resultLoc = locationsFull.filter((item) => {
             if (e.target.value === '') return '';
             return item.name.toLowerCase().includes(e.target.value.toLowerCase());
         });
@@ -80,7 +87,7 @@ export default function SearchBox() {
     function getLocationDetailsDropSb(e) {
         setDropOffEnterSb(true);
 
-        const resultLocDrop = locations.filter((item) => {
+        const resultLocDrop = locationsFull.filter((item) => {
             if (e.target.value === '') return '';
             return item.name.toLowerCase().includes(e.target.value.toLowerCase());
         });
@@ -90,11 +97,15 @@ export default function SearchBox() {
     function handleSelectedPickUpSb(pickUp) {
         setSelectedPickUpSb(pickUp[1]);
         setPickUpLocationFullSb(pickUp[0]);
+        setPickUpInput(pickUp[0]);
+        setPickUpEnterSb(false);
     }
 
     function handleSelectedDropSb(drop) {
         setSelectedDropSb(drop[1]);
         setDropOffLocationFullSb(drop[0]);
+        setDropOffInput(drop[0]);
+        setDropOffEnterSb(false);
     }
 
     function validateForm() {
@@ -128,7 +139,7 @@ export default function SearchBox() {
                         className="rounded-md p-5 w-full h-full focus:outline-none"
                         placeholder="Pick-Up Location"
                         value={pickUpInput}
-                        onBlur={() => setPickUpEnterSb(false)}
+                        onBlur={() => setTimeout(() => setPickUpEnterSb(false), 200)}
                         onChange={(e) => {
                             setPickUpInput(e.target.value);
                             getLocationDetailsSb(e);
@@ -160,7 +171,7 @@ export default function SearchBox() {
                         className="rounded-md p-5 w-full h-full focus:outline-none"
                         placeholder="Drop-Off Location"
                         value={dropOffInput}
-                        onBlur={() => setDropOffEnterSb(false)}
+                        onBlur={() => setTimeout(() => setDropOffEnterSb(false), 200)}
                         onChange={(e) => {
                             setDropOffInput(e.target.value);
                             getLocationDetailsDropSb(e);

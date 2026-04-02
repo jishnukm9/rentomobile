@@ -1,9 +1,13 @@
 import { createContext, useEffect, useState } from 'react';
-import { getLocations } from '../data/search/locations';
+import cityData from '../data/search/cityLocations.json';
 
 export const SearchContext = createContext();
 
 export default function SearchProvider({ children }) {
+    const [selectedCity, setSelectedCity] = useState(() => {
+        return localStorage.getItem("selectedCity") || 'varkala';
+    });
+
     const [selectedPickUp, setSelectedPickUp] = useState(() => {
         return localStorage.getItem("pickup") || '';
     });
@@ -38,7 +42,15 @@ export default function SearchProvider({ children }) {
         return localStorage.getItem("endTime") || '12:00';
     });
 
-    // Effects to update localStorage when state changes
+    const cities = cityData.cities;
+
+    const currentCityData = cities.find(city => city.id === selectedCity) || cities[0];
+    const locationsFull = currentCityData.locations;
+
+    useEffect(() => {
+        localStorage.setItem('selectedCity', selectedCity);
+    }, [selectedCity]);
+
     useEffect(() => {
         localStorage.setItem('pickup', selectedPickUp);
     }, [selectedPickUp]);
@@ -79,7 +91,13 @@ export default function SearchProvider({ children }) {
         setEndTime(val);
     }
 
-    const locationsFull = getLocations();
+    function handleCityChange(cityId) {
+        setSelectedCity(cityId);
+        setSelectedPickUp('');
+        setSelectedDrop('');
+        setPickUpLocationFull('');
+        setDropOffLocationFull('');
+    }
 
     function handleSelectedPickUp(pickUp) {
         setSelectedPickUp(pickUp[1]);
@@ -94,6 +112,9 @@ export default function SearchProvider({ children }) {
     return (
         <SearchContext.Provider
             value={{
+                selectedCity,
+                handleCityChange,
+                cities,
                 selectedPickUp,
                 locationsFull,
                 selectedDrop,

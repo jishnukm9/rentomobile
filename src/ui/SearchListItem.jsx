@@ -10,7 +10,7 @@ export default function SearchListItem({name,type,code,selectLoc}) {
    
   }
   return (
-    <li className='hover:cursor-pointer hover:bg-blue-100 p-4' onMouseEnter={()=>handleClick()} >
+    <li className='hover:cursor-pointer hover:bg-blue-100 p-4' onClick={()=>handleClick()} >
 
       <p>
         <span className={`${type === 'Airport' ? 'bg-orange-600' : 'bg-blue-600'} px-2 py-1 rounded me-3 text-sm`}>
