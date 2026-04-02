@@ -55,8 +55,8 @@ export default function App() {
       <Elements stripe={stripePromise}>
     <Routes>
     
-        <Route index element={<Navigate replace to="search" />} />
-        <Route path="search" element={<Search/>} />
+        <Route index element={<Search/>} />
+        <Route path="search" element={<Navigate replace to="/" />} />
         <Route path="comingsoon" element={<ComingSoon />} />
         <Route path="bookingsearchresult" element={
            <DetailsProvider>
