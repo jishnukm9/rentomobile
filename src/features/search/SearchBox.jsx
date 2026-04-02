@@ -115,7 +115,7 @@ export default function SearchBox() {
             handleSelectedPickUp([pickUpLocationFullSb, selectedPickUpSb]);
             handleSelectedDrop([dropOffLocationFullSb, selectedDropSb]);
 
-            navigate('/bookingsearchresult');
+            navigate('/comingsoon');
         }
     }
 

@@ -9,6 +9,7 @@ import Search from './pages/Search';
 import SearchResults from './pages/SearchResults';
 import Booking from './pages/Booking';
 import PageNotFound from './pages/PageNotFound';
+import ComingSoon from './pages/ComingSoon';
 import toast, { Toaster } from "react-hot-toast";
 import SearchProvider from './context/SearchContext';
 import FilterProvider from './context/filterContext';
@@ -56,6 +57,7 @@ export default function App() {
     
         <Route index element={<Navigate replace to="search" />} />
         <Route path="search" element={<Search/>} />
+        <Route path="comingsoon" element={<ComingSoon />} />
         <Route path="bookingsearchresult" element={
            <DetailsProvider>
         <FilterProvider>

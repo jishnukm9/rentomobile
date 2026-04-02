@@ -16,7 +16,7 @@ export default function Accordian() {
 
         <ul>
             <li className='border-b-2 pb-3'>
-<ListItem   heading="What are the requirements to rent a car from RentoMobile?"    description="To rent a car from RentoMobile, you must be at least 21 years old, have a valid driver’s license, and possess a major credit card in your name. Additional documentation may be required for international renters"       />
+<ListItem   heading="What are the requirements to rent a two wheeler from RentoMobile?"    description="To rent a two wheeler from RentoMobile, you must be at least 21 years old, have a valid driver’s license, and possess a major credit two wheelerd in your name. Additional documentation may be required for international renters"       />
             </li>
             <li className='border-b-2 py-3'>
 <ListItem heading="How do I modify or cancel my existing reservation?"  description="You can modify or cancel your reservation by logging into your account on the RentOMobile website or by contacting our customer service team. Please note that any changes to your reservation may result in different rental rates."   />
@@ -27,7 +27,7 @@ export default function Accordian() {
 
             </li>
             <li className=' pt-3'>
-<ListItem heading="What should I do if I have an accident or encounter issues with my rental car?"  description="In the event of an accident, please contact local authorities and file a police report. Then, call RentOMobile’s 24/7 roadside assistance. We will guide you through the process and arrange for a replacement vehicle if necessary"   />
+<ListItem heading="What should I do if I have an accident or encounter issues with my rental two wheeler?"  description="In the event of an accident, please contact local authorities and file a police report. Then, call RentOMobile’s 24/7 roadside assistance. We will guide you through the process and arrange for a replacement vehicle if necessary"   />
 
             </li>
         </ul>
