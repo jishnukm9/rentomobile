@@ -4,7 +4,7 @@ export default function TimePicker({ placeholder, name, value, onchange }) {
   return (
     <div>
       <select
-        className="w-[40px] block appearance-none  bg-white   focus:outline-none "
+        className="w-[40px] block appearance-none  bg-white   focus:outline-none g:text-[5px]"
         value={value}
         onChange={(e) => onchange(e.target.value)}
         name={name}

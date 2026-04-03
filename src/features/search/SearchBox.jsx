@@ -169,7 +169,7 @@ export default function SearchBox() {
               {locationresultSb.length === 0 ? (
                 <p className="p-4">No Result Found!</p>
               ) : (
-                <ul className="flex flex-col">
+                <ul className="flex flex-col max-h-[300px] overflow-y-auto">
                   {locationresultSb.map((loc) => (
                     <SearchListItem
                       key={loc.id}
@@ -202,7 +202,7 @@ export default function SearchBox() {
               {locationresultDropSb.length === 0 ? (
                 <p className="p-4">No Result Found!</p>
               ) : (
-                <ul className="flex flex-col">
+                <ul className="flex flex-col max-h-[300px] overflow-y-auto">
                   {locationresultDropSb.map((loc) => (
                     <SearchListItem
                       key={loc.id}

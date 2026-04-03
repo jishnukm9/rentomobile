@@ -26,7 +26,47 @@
           "type": "Cliff",
           "id": 103,
           "lat": 8.7356,
-          "lng": 76.7150
+          "lng": 76.715
+        },
+        {
+          "name": "Varkala Sivagiri Railway Station",
+          "code": "VSR",
+          "type": "Railway Station",
+          "id": 104,
+          "lat": 8.7356,
+          "lng": 76.715
+        },
+        {
+          "name": "Varkala Black Beach Resort",
+          "code": "VBB",
+          "type": "Resort",
+          "id": 105,
+          "lat": 8.7356,
+          "lng": 76.715
+        },
+        {
+          "name": "Varkala Aquarium",
+          "code": "VAQ",
+          "type": "Building",
+          "id": 106,
+          "lat": 8.7356,
+          "lng": 76.715
+        },
+        {
+          "name": "Varkala Sivagiri Mutt",
+          "code": "VSM",
+          "type": "Pilgrimage",
+          "id": 107,
+          "lat": 8.7356,
+          "lng": 76.715
+        },
+        {
+          "name": "Varkala Sree Janardhana Swamy Temple",
+          "code": "VSJ",
+          "type": "Temple",
+          "id": 107,
+          "lat": 8.7356,
+          "lng": 76.715
         }
       ]
     },
@@ -40,14 +80,14 @@
           "type": "Airport",
           "id": 201,
           "lat": 10.151783,
-          "lng": 76.392960
+          "lng": 76.39296
         },
         {
           "name": "Kochi Fort",
           "code": "KFC",
           "type": "City",
           "id": 202,
-          "lat": 9.9650,
+          "lat": 9.965,
           "lng": 76.2419
         },
         {

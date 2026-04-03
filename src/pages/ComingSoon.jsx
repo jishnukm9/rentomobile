@@ -6,7 +6,7 @@ export default function ComingSoon() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[linear-gradient(rgba(29,78,216,0.5),rgba(37,99,235,0.5),rgba(0,0,0,0.5)),url(/rentomobile-comp.jpeg)] bg-cover">
+    <div className="min-h-screen bg-[linear-gradient(rgba(29,78,216,0.5),rgba(37,99,235,0.5),rgba(0,0,0,0.5)),url(/rentomobile-comp.jpg)] bg-cover">
       <Navbar />
 
       <div className="flex flex-col items-center justify-center min-h-[80vh] px-4">
