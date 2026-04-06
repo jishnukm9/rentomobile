@@ -83,10 +83,18 @@
           "lng": 76.39296
         },
         {
-          "name": "Kochi Fort",
+          "name": "Fort Kochi Beach",
           "code": "KFC",
-          "type": "City",
+          "type": "Beach",
           "id": 202,
+          "lat": 9.965,
+          "lng": 76.2419
+        },
+        {
+          "name": "Vyttila Mobility Hub",
+          "code": "VYH",
+          "type": "Building",
+          "id": 204,
           "lat": 9.965,
           "lng": 76.2419
         },
@@ -97,6 +105,70 @@
           "id": 203,
           "lat": 9.9847,
           "lng": 76.2836
+        },
+        {
+          "name": "Marine Drive",
+          "code": "MDR",
+          "type": "City",
+          "id": 205,
+          "lat": 9.965,
+          "lng": 76.2419
+        },
+        {
+          "name": "⁠Edappally (⁠Lulu Mall Area)",
+          "code": "EDP",
+          "type": "City",
+          "id": 206,
+          "lat": 9.965,
+          "lng": 76.2419
+        },
+        {
+          "name": "Panampilly Nagar",
+          "code": "PAN",
+          "type": "City",
+          "id": 207,
+          "lat": 9.965,
+          "lng": 76.2419
+        },
+        {
+          "name": "Kakkanad (Infopark)",
+          "code": "KAK",
+          "type": "City",
+          "id": 208,
+          "lat": 9.965,
+          "lng": 76.2419
+        },
+        {
+          "name": "Ernakulam South Railway Station",
+          "code": "ERS",
+          "type": "Railway Station",
+          "id": 209,
+          "lat": 9.965,
+          "lng": 76.2419
+        },
+        {
+          "name": "M.G. Road Metro Station",
+          "code": "MGR",
+          "type": "City",
+          "id": 210,
+          "lat": 9.965,
+          "lng": 76.2419
+        },
+        {
+          "name": "Mattancherry (Jew Town)",
+          "code": "MTY",
+          "type": "City",
+          "id": 211,
+          "lat": 9.965,
+          "lng": 76.2419
+        },
+        {
+          "name": "Kaloor (JLN Stadium)",
+          "code": "KLR",
+          "type": "City",
+          "id": 212,
+          "lat": 9.965,
+          "lng": 76.2419
         }
       ]
     },
@@ -105,7 +177,7 @@
       "name": "Wayanad",
       "locations": [
         {
-          "name": "Kalpetta",
+          "name": "Kalpetta (New Bus Stand)",
           "code": "KLP",
           "type": "City",
           "id": 301,
@@ -127,6 +199,138 @@
           "id": 303,
           "lat": 11.8043,
           "lng": 76.0235
+        },
+        {
+          "name": "Vythiri",
+          "code": "VYT",
+          "type": "Resort",
+          "id": 304,
+          "lat": 11.8043,
+          "lng": 76.0235
+        },
+        {
+          "name": "Meppadi",
+          "code": "MPP",
+          "type": "City",
+          "id": 305,
+          "lat": 11.8043,
+          "lng": 76.0235
+        }
+      ]
+    },
+    {
+      "id": "munnar",
+      "name": "Munnar",
+      "locations": [
+        {
+          "name": "Munnar KSRTC Bus Stand",
+          "code": "MBS",
+          "type": "Bus Stand",
+          "id": 301,
+          "lat": 11.6126,
+          "lng": 76.0842
+        },
+        {
+          "name": "Moolakadai (Town Center)",
+          "code": "MCD",
+          "type": "City",
+          "id": 302,
+          "lat": 11.6126,
+          "lng": 76.0842
+        },
+        {
+          "name": "KDHP Tea Museum",
+          "code": "KTM",
+          "type": "Museum",
+          "id": 303,
+          "lat": 11.6126,
+          "lng": 76.0842
+        }
+      ]
+    },
+    {
+      "id": "alleppey",
+      "name": "Alleppey",
+      "locations": [
+        {
+          "name": "Alappuzha Railway Station",
+          "code": "ARS",
+          "type": "Railway Station",
+          "id": 301,
+          "lat": 11.6126,
+          "lng": 76.0842
+        },
+        {
+          "name": "Finishing Point (Punnamada)",
+          "code": "FPT",
+          "type": "City",
+          "id": 302,
+          "lat": 11.6126,
+          "lng": 76.0842
+        },
+        {
+          "name": "Alappuzha Beach",
+          "code": "ABE",
+          "type": "Beach",
+          "id": 303,
+          "lat": 11.6126,
+          "lng": 76.0842
+        },
+        {
+          "name": "Alappuzha KSRTC Bus Stand",
+          "code": "AKB",
+          "type": "Bus Stand",
+          "id": 304,
+          "lat": 11.6126,
+          "lng": 76.0842
+        },
+        {
+          "name": "Mararikulam Beach",
+          "code": "MBE",
+          "type": "Beach",
+          "id": 305,
+          "lat": 11.6126,
+          "lng": 76.0842
+        },
+        {
+          "name": "Mullakkal Market",
+          "code": "MMK",
+          "type": "Market",
+          "id": 306,
+          "lat": 11.6126,
+          "lng": 76.0842
+        },
+        {
+          "name": "Dutch Square",
+          "code": "DQS",
+          "type": "City",
+          "id": 307,
+          "lat": 11.6126,
+          "lng": 76.0842
+        },
+        {
+          "name": "Alappuzha Lighthouse",
+          "code": "ALL",
+          "type": "Lighthouse",
+          "id": 308,
+          "lat": 11.6126,
+          "lng": 76.0842
+        },
+        {
+          "name": "Vazhicherry Junction",
+          "code": "VJ",
+          "type": "City",
+          "id": 309,
+          "lat": 11.6126,
+          "lng": 76.0842
+        },
+        {
+          "name": "Ambalapuzha (Sri Krishna Temple)",
+          "code": "AKT",
+          "type": "Temple",
+          "id": 310,
+          "lat": 11.6126,
+          "lng": 76.0842
         }
       ]
     }
