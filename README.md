@@ -1,6 +1,6 @@
-# Rentomobile
+# Tripmoto
 
-Rentomobile is a car booking platform designed to streamline the process of renting vehicles for users. Developed using React, this web application leverages cutting-edge technologies to deliver a user-friendly, efficient car rental experience. The UI design takes inspiration from Booking.com.
+Tripmoto is a car booking platform designed to streamline the process of renting vehicles for users. Developed using React, this web application leverages cutting-edge technologies to deliver a user-friendly, efficient car rental experience. The UI design takes inspiration from Booking.com.
 
 ## Technologies Used
 
@@ -8,11 +8,11 @@ Rentomobile is a car booking platform designed to streamline the process of rent
 - **React Router**: This tool provides seamless navigation between different pages and components without refreshing the browser, making the user experience smooth and consistent.
 - **React Query**: Used for fetching, caching, and updating the data in the application, React Query optimizes data synchronization with the backend, reducing the need for manual state management and improving performance.
 - **Context API**: This feature of React enables state management within the app, which is crucial for maintaining the states related to user authentication, session management, and settings across various components without prop drilling.
-- **Avis Car Booking API**: Integrating Avis API allows Rentomobile to offer a wide range of vehicles for rent, handling bookings, and managing vehicle information directly through Avis’s robust system. This integration ensures up-to-date access to vehicle availability and rates, enhancing the booking process.
+- **Avis Car Booking API**: Integrating Avis API allows Tripmoto to offer a wide range of vehicles for rent, handling bookings, and managing vehicle information directly through Avis’s robust system. This integration ensures up-to-date access to vehicle availability and rates, enhancing the booking process.
 
 ## Demo
 
-Check out the project in action <a href="https://rentomobile.vercel.app/">here</a>. 
+Check out the project in action <a href="https://tripmoto.vercel.app/">here</a>. 
 <br><br>
 
 

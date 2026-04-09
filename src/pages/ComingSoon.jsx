@@ -40,7 +40,7 @@ export default function ComingSoon() {
             onClick={() => navigate("/search")}
             className="bg-green-600 text-white px-8 py-4 rounded-md font-bold text-xl hover:bg-green-700 transition-colors duration-200 shadow-lg"
           >
-            Back to Search
+            Back
           </button>
         </div>
       </div>
