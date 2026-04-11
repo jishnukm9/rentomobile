@@ -26,7 +26,7 @@ export default function Info() {
         />
         <FeatureItemBig
           heading="Exclusive offers and deals!"
-          description="Get exclusive offers and deals for booking only at Rentomobile"
+          description="Get exclusive offers and deals for booking only at TripMoto"
           imgurl="https://cdn2.rcstatic.com/com.rentalcars.185492029745.eu-west-1.web.prod.static-live/images/landing-pages/email-subscription/desktop/email_signup@1x.png"
         />
       </div>
