@@ -3,36 +3,36 @@ import React from "react";
 export default function LogoList() {
   const logos = [
     {
-      src: "/src/data/search/honda.png",
-      alt: "Alamo",
+      src: "https://media.publit.io/file/honda-r.png",
+      alt: "Honda",
     },
     {
-      src: "/src/data/search/tvs.png",
-      alt: "Alamo",
+      src: "https://media.publit.io/file/tvs.png",
+      alt: "TVS",
     },
     // {
     //   src: "/src/data/search/ather.png",
     //   alt: "Alamo",
     // },
     {
-      src: "/src/data/search/yamaha_logo.webp",
-      alt: "Alamo",
+      src: "https://media.publit.io/file/yamaha-logo-v.webp",
+      alt: "Yamaha",
     },
     {
-      src: "/src/data/search/hero.png",
-      alt: "Alamo",
+      src: "https://media.publit.io/file/hero-9.png",
+      alt: "Hero",
     },
     {
-      src: "/src/data/search/bajaj_logo.gif",
-      alt: "Alamo",
+      src: "https://media.publit.io/file/bajaj-logo-v.gif",
+      alt: "Bajaj",
     },
     {
-      src: "/src/data/search/suzuki_logo.webp",
-      alt: "Alamo",
+      src: "https://media.publit.io/file/suzuki-logo.webp",
+      alt: "Suzuki",
     },
     {
-      src: "/src/data/search/royalenfield.avif",
-      alt: "Alamo",
+      src: "https://media.publit.io/file/royalenfield.png",
+      alt: "Royal Enfield",
     },
   ];
 
